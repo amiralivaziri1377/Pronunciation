@@ -1,8 +1,27 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
+  vite: {
+    css: {
+      preprocessorOptions: {
+        css: {
+          charset: false // Prevent incorrect character handling
+        }
+      }
+    }
+  },
   devtools: { enabled: true },
-  css: ['~/assets/main.css'],
+  css: ['@/assets/css/main.css'],
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'manifest',
+          href: '@/static/manifest.json' // Make sure this matches the path of your manifest file
+        }
+      ]
+    }
+  },
   modules: ['@vite-pwa/nuxt'],
   pwa: {
     manifest: {
