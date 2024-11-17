@@ -25,22 +25,39 @@ export default defineNuxtConfig({
   modules: ['@vite-pwa/nuxt'],
   pwa: {
     manifest: {
-      name: 'My Nuxt 3 PWA',
-      short_name: 'Nuxt PWA',
-      description: 'A Nuxt 3 Progressive Web Application',
+      name: 'Pronunciation App',
+      short_name: 'Pronounce',
+      description: 'A fun app for children to learn pronunciation!',
+      lang: 'en',
       theme_color: '#ffffff',
+      background_color: '#f3f4f6',
+      display: 'standalone',
       icons: [
-        {
-          src: '/icon-192x192.png',
-          sizes: '192x192',
-          type: 'image/png',
-        },
         {
           src: '/icon-512x512.png',
           sizes: '512x512',
-          type: 'image/png',
+          type: 'image/png'
         },
+        {
+          src: '/icon-192x192.png',
+          sizes: '192x192',
+          type: 'image/png'
+        }
       ],
-    },
-  },
+      screenshots: [
+        {
+          src: '/screenshot-desktop.png',
+          sizes: '1920x1080', // Replace with your desktop screenshot dimensions
+          type: 'image/png',
+          form_factor: 'wide'
+        },
+        {
+          src: '/screenshot-mobile.png',
+          sizes: '1080x1920', // Replace with your mobile screenshot dimensions
+          type: 'image/png',
+          form_factor: 'narrow'
+        }
+      ]
+    }
+  }
 })
